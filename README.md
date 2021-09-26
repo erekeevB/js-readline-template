@@ -19,6 +19,6 @@ rl.on("close", () => {
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
 let inputs = []
-process.stdin.on("data", input => inputs.push(input.split(' ').map(x => parseInt(x));
+process.stdin.on("data", input => inputs.push(input.split(' ').map(x => parseInt(x)));
 process.stdin.on("end", () => main(inputs));
 ```
