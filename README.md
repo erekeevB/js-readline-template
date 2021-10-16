@@ -1,24 +1,23 @@
 # js-readline-template
 
 ``` javascript
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const fs = require('fs');
+const input = fs.readFileSync(0, 'utf8').trim().split('\n');
 
-let input = [];
+let currentline = 0;
+function readline(){
+    return input[currentline++];
+}
 
-rl.on("line", line => input.push(line.split(" ").map(x => parseInt(x))));
+let T = readline();
+for(let i = 1; i <= T; i++){
+    let [N, B] = readline().split(' ');
+    let arr = readline().split(' ');
+    console.log(`Case #${i}: ${solve(B, arr)}`);
+}
 
-rl.on("close", () => {
-});
-```
 
-``` javascript
-process.stdin.resume();
-process.stdin.setEncoding("utf-8");
-let inputs = []
-process.stdin.on("data", input => inputs.push(input.split(' ').map(x => parseInt(x)));
-process.stdin.on("end", () => main(inputs));
+function solve(B, arr){
+  
+}
 ```
